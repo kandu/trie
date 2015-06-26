@@ -16,4 +16,5 @@ module Make :
       val get : 'a node -> H.t list -> 'a option
       val set : 'a node -> H.t list -> 'a -> unit
       val unset : 'a node -> H.t list -> unit
+      val sub: 'a node -> H.t list -> 'a node option
     end
