@@ -6,6 +6,7 @@ module type intf =
     val get : 'a node -> path list -> 'a option
     val set : 'a node -> path list -> 'a -> unit
     val unset : 'a node -> path list -> unit
+    val sub: 'a node -> path list -> 'a node option
   end
 module Make :
   functor (H : Core_kernel.Std.Hashtbl.Key) ->

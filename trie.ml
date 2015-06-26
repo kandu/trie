@@ -8,6 +8,7 @@ module type intf = sig
   val get : 'a node -> path list -> 'a option
   val set : 'a node -> path list -> 'a -> unit
   val unset : 'a node -> path list -> unit
+  val sub: 'a node -> path list -> 'a node option
 end
 
 module Make (H:Hashtbl.Key): (intf with type path:= H.t) = struct
@@ -53,5 +54,12 @@ module Make (H:Hashtbl.Key): (intf with type path:= H.t) = struct
           else false
         | None-> false
     in unset node path |> ignore
+
+  let rec sub node path=
+    match path with
+    | []-> Some node
+    | hd::tl-> match Path.find node.next hd with
+      | Some child-> sub child tl
+      | None-> None
 end
 

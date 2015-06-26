@@ -4,8 +4,11 @@ CC= gcc
 
 lib: trie.cma trie.cmxa
 
-trie.cma trie.cmxa: trie.ml
-	ocamlfind ocamlmklib -package core_kernel -ltrie -o trie -oc trie_stubs $^
+trie.cma: trie.ml
+	ocamlfind ocamlc -package core_kernel -a -o $@ $^
+
+trie.cmxa: trie.ml
+	ocamlfind ocamlopt -package core_kernel -a -o $@ $^
 
 trie.ml: trie.cmi
 
