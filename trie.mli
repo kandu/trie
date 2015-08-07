@@ -1,7 +1,6 @@
 (** trie tree
-  This module implements the trie tree data structure.
-  All operations are not lazy. Operations like set, unset over a trie have side-effects.
- *)
+  This module implements strict impure trie tree data structure.
+  *)
 
 module type intf =
   sig
