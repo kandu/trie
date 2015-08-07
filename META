@@ -1,6 +1,6 @@
 name= "trie"
 version = "0.1"
-description = "trie prefix tree"
+description = "strict impure trie tree"
 requires="core_kernel"
 archive(byte)= "trie.cma"
 archive(native)= "trie.cmxa"

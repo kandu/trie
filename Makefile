@@ -28,7 +28,7 @@ install: lib
 doc: build_doc/index.html
 
 install-doc: build_doc/index.html
-	mdkir -p $(DOCDIR)
+	mkdir -p $(DOCDIR)
 	cp -r build_doc/* $(DOCDIR)
 
 uninstall:
