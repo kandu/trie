@@ -26,5 +26,5 @@ module type intf =
     val sub: 'a node -> path list -> 'a node option
   end
 
-module Make (H : Core_kernel.Std.Hashtbl.Key): intf with type path:= H.t
+module Make (H : Core_kernel.Hashtbl.Key): intf with type path:= H.t
 

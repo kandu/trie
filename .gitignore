@@ -1,5 +1,3 @@
-syntax: glob
-
 **/*.annot
 
 **/.\#*
@@ -11,4 +9,8 @@ syntax: glob
 **/*.a
 **/*.so
 **/*.cm*
+
+.merlin
+_build
+trie.install
 

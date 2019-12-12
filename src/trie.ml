@@ -1,4 +1,4 @@
-open Core_kernel.Std
+open Core_kernel
 open Fn
 
 module type intf = sig
@@ -24,7 +24,7 @@ module Make (H:Hashtbl.Key): (intf with type path:= H.t) = struct
     Path.find_or_add node.next key
       ~default:(fun ()->
         let child= create value in
-        Path.replace node.next ~key ~data:child;
+        Path.set node.next ~key ~data:child;
         child)
 
   let rec set node path value=

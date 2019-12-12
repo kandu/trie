@@ -1,7 +1,0 @@
-name= "trie"
-version = "0.1"
-description = "strict impure trie tree"
-requires="core_kernel"
-archive(byte)= "trie.cma"
-archive(native)= "trie.cmxa"
-
