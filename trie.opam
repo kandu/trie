@@ -12,6 +12,6 @@ build: [
 ]
 depends: [
   "ocaml" {>= "4.02"}
-  "core_kernel" {>= "v0.10.0"}
-  "dune" {build}
+  "dune" {>= "1.0"}
+  "odoc" {with-doc}
 ]

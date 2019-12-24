@@ -1,5 +1,4 @@
 (library
   (name trie)
   (public_name trie)
-  (libraries core_kernel)
   (flags (:standard -safe-string)))

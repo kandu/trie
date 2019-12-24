@@ -2,7 +2,7 @@
   This module implements strict impure trie tree data structure.
   *)
 
-module type intf =
+module type Intf =
   sig
     (** type of path point *)
     type path
@@ -14,17 +14,20 @@ module type intf =
     val create : 'a option -> 'a node
 
     (** returns the value associated with the path *)
-    val get : 'a node -> path list -> 'a option
+    val get : 'a node -> path -> 'a option
 
     (** associate the value with the path *)
-    val set : 'a node -> path list -> 'a -> unit
+    val set : 'a node -> path -> 'a -> unit
 
     (** remove an association of the path *)
-    val unset : 'a node -> path list -> unit
+    val unset : 'a node -> path -> unit
 
     (** returns the sub node associated with the path *)
-    val sub: 'a node -> path list -> 'a node option
+    val sub : 'a node -> path -> 'a node option
+
+    (** returns whether the node is the leaf of the tree *)
+    val is_leaf : 'a node -> bool
   end
 
-module Make (H : Core_kernel.Hashtbl.Key): intf with type path:= H.t
+module Make (H : Hashtbl.HashedType) : Intf with type path= H.t list
 
