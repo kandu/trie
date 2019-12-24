@@ -10,7 +10,7 @@ module type Intf =
     (** type of trie node *)
     type 'a node
 
-    (** create a new trie tree with or without an element *)
+    (** create a new trie tree with an optional element *)
     val create : 'a option -> 'a node
 
     (** returns the value associated with the path *)
@@ -25,7 +25,7 @@ module type Intf =
     (** returns the sub node associated with the path *)
     val sub : 'a node -> path -> 'a node option
 
-    (** returns whether the node is the leaf of the tree *)
+    (** returns whether the node is a leaf of the tree *)
     val is_leaf : 'a node -> bool
   end
 

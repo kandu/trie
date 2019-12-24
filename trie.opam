@@ -8,10 +8,9 @@ synopsis: "Strict impure trie tree"
 dev-repo: "git://github.com/kandu/trie"
 build: [
   ["dune" "build" "-p" name "-j" jobs]
-  ["dune" "runtest" "-p" name "-j" jobs] { with-test }
 ]
 depends: [
   "ocaml" {>= "4.02"}
   "dune" {>= "1.0"}
-  "odoc" {with-doc}
 ]
+synopsis: "Implementation of strict impure trie tree"

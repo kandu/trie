@@ -1,2 +1,2 @@
-(lang dune 1.11)
+(lang dune 1.0)
 (name trie)
